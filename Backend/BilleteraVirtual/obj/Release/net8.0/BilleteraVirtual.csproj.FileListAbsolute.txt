@@ -1,0 +1,8 @@
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.csproj.AssemblyReference.cache
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\rpswa.dswa.cache.json
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.AssemblyInfoInputs.cache
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.AssemblyInfo.cs
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.csproj.CoreCompileInputs.cache
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\julia\OneDrive\Desktop\Proyecto Final\BilleteraVirtual\obj\Release\net8.0\BilleteraVirtual.MvcApplicationPartsAssemblyInfo.cache
