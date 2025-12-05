@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { AnimacionCriptos } from '../composables/useBackgroundAnimation';
+import { AnimacionCriptos } from '../composables/useBackgroundAnimation'
 import axios from 'axios'
 
 onMounted(() => {
   AnimacionCriptos()
-});
+})
 
 const email = ref('')
 const password = ref('')
@@ -34,7 +34,7 @@ async function login() {
     localStorage.setItem('userId', userId)
     localStorage.setItem('userName', userName)
 
-    router.push({ name: 'home' })
+    router.push({ name: 'pagina-principal' })
   } catch (err: any) {
     if (err.response) {
       const errorMessage = err.response.data.message
@@ -67,8 +67,6 @@ async function register() {
     }
   }
 }
-
-
 </script>
 
 <template>

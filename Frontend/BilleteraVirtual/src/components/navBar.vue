@@ -1,26 +1,20 @@
 <script setup lang="ts">
 import { useAuth } from '../composables/useAuth'
-import { onMounted } from 'vue'
-import { AnimacionCriptos } from '../composables/useBackgroundAnimation'
 
-onMounted(() => {
-  AnimacionCriptos()
-})
-
-const { logout } = useAuth()
+const { logout } = useAuth();
 
 </script>
 
+
 <template>
-  <canvas id="canvasCripto"></canvas>
   <header class="navbar">
     <div class="left">
       <h2>Billetera</h2>
     </div>
 
     <nav class="right">
-      <router-link to="/" class="nav-btn">Home</router-link>
-      <router-link to="/movimientos" class="nav-btn">Movimientos</router-link>
+      <router-link to="/" class="nav-btn">Pagina Principal</router-link>
+      <router-link to="/transacciones" class="nav-btn">Transacciones</router-link>
       <button class="logout-btn" @click="logout">Cerrar Sesión</button>
     </nav>
   </header>
