@@ -171,13 +171,13 @@ namespace BilleteraVirtual.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> BorrarTransaccionPorId(int id)
         {
-            var traaccion = await _context.Transacciones.FindAsync(id);
-            if (traaccion == null)
+            var transaccion = await _context.Transacciones.FindAsync(id);
+            if (transaccion == null)
             {
                 return NotFound();
             }
 
-            _context.Transacciones.Remove(traaccion);
+            _context.Transacciones.Remove(transaccion);
             await _context.SaveChangesAsync();
             return NoContent();
         }
