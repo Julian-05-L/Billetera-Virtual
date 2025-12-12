@@ -119,54 +119,108 @@ namespace BilleteraVirtual.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdateTransaccion(int id, Transaccion transaccion)
+        public async Task<ActionResult> UpdateTransaccion(int id, BilleteraVirtual.DTOs.UpdateTransaccionDTO updateTransaccionDTO)
         {
-            if(id != transaccion.Id)
+            if (id != updateTransaccionDTO.Id)
             {
                 return BadRequest("El Id de la transacción no coincide");
             }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var cliente = await _context.Clientes.FindAsync(transaccion.ClienteId);
-            if (cliente == null)
-            {
-                return BadRequest("Cliente no valido");
-            }
 
             var transaccionExistente = await _context.Transacciones.FindAsync(id);
-            if (transaccionExistente == null)
+
+            if (transaccionExistente == null) 
             {
-                return NotFound();
+                return NotFound("Transacción no encontrada");
             }
 
-            //Se actualizan los campos de la transacción existente con los nuevos valores
-            transaccionExistente.CryptoAmount = transaccion.CryptoAmount;
-            transaccionExistente.Action = transaccion.Action;
-            transaccionExistente.CryptoAmount = transaccion.CryptoAmount;
-            transaccionExistente.Money = transaccion.Money;
-            transaccionExistente.FechaTransaccion = DateTime.UtcNow; 
-            transaccionExistente.ClienteId = transaccion.ClienteId;
+            var cliente = await _context.Clientes.FindAsync(transaccionExistente.ClienteId);
 
-            //await _context.SaveChangesAsync();
-            _context.Entry(transaccionExistente).State = EntityState.Modified;
+            if (cliente == null) 
+            { 
+                return BadRequest("Cliente no válido");
+            }
 
+            // reversar el efecto de la transacción existente en el saldo del cliente
+            if (transaccionExistente.Action.ToLower() == "purchase")
+            {
+                cliente.SaldoPesos += transaccionExistente.Money;
+            }
+            else if (transaccionExistente.Action.ToLower() == "sale") 
+            { 
+                cliente.SaldoPesos -= transaccionExistente.Money;
+            }
+
+            // Obtener el precio actual 
+            decimal precioARS;
             try
             {
-                await _context.SaveChangesAsync();
-                return NoContent();
+                var url = $"https://criptoya.com/api/argenbtc/{updateTransaccionDTO.CryptoCode}/ars";
+                var response = await _httpClient.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                var json = await response.Content.ReadAsStringAsync();
+                using var jsonDoc = JsonDocument.Parse(json);
+                precioARS = jsonDoc.RootElement.GetProperty("totalAsk").GetDecimal();
             }
-            catch (DbUpdateConcurrencyException)
+            catch
             {
-                if (!_context.Transacciones.Any(e => e.Id == id))
-                {
-                    return NotFound();
-                }
-                else throw;
+                return BadRequest("Error al obtener el precio de la criptomoneda.");
             }
+
+            decimal nuevoMontoPesos = updateTransaccionDTO.CryptoAmount * precioARS;
+
+            // Validacion de acciones
+            if (updateTransaccionDTO.Action.ToLower() == "purchase")
+            {
+                if (nuevoMontoPesos > cliente.SaldoPesos) 
+                { 
+                    return BadRequest("Saldo insuficiente para realizar esta compra modificada.");
+                }
+
+                cliente.SaldoPesos -= nuevoMontoPesos;
+            }
+            else if (updateTransaccionDTO.Action.ToLower() == "sale")
+            {
+                var totalComprado = _context.Transacciones
+                    .Where(t => t.ClienteId == cliente.Id &&
+                                t.Action.ToLower() == "purchase" &&
+                                t.CryptoCode == updateTransaccionDTO.CryptoCode)
+                    .Sum(t => t.CryptoAmount);
+
+                var totalVendido = _context.Transacciones
+                    .Where(t => t.ClienteId == cliente.Id &&
+                                t.Action.ToLower() == "sale" &&
+                                t.CryptoCode == updateTransaccionDTO.CryptoCode &&
+                                t.Id != transaccionExistente.Id)
+                    .Sum(t => t.CryptoAmount);
+
+                var saldoDisponible = totalComprado - totalVendido;
+
+                if (saldoDisponible < updateTransaccionDTO.CryptoAmount) 
+                {
+                    return BadRequest("Saldo insuficiente de esa criptomoneda para esta venta.");
+                }
+
+                cliente.SaldoPesos += nuevoMontoPesos;
+            }
+
+            // Actualizar cliente
+            _context.Clientes.Update(cliente);
+
+            // Actualizar transaccion
+            transaccionExistente.CryptoCode = updateTransaccionDTO.CryptoCode;
+            transaccionExistente.Action = updateTransaccionDTO.Action;
+            transaccionExistente.CryptoAmount = updateTransaccionDTO.CryptoAmount;
+            transaccionExistente.Money = nuevoMontoPesos;
+            transaccionExistente.FechaTransaccion = updateTransaccionDTO.FechaTransaccion;
+
+            _context.Transacciones.Update(transaccionExistente);
+
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
+
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> BorrarTransaccionPorId(int id)
