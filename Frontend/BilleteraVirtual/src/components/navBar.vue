@@ -33,13 +33,12 @@ const toggleDropdown = () => {
 }
 
 const openModifyModal = () => {
-  isDropdownOpen.value = false // Cerramos el dropdown
+  isDropdownOpen.value = false
   isModifyModalOpen.value = true
 }
 
 const onUserUpdated = () => {
   alert('Datos actualizados correctamente. Se cerrará la sesión para que inicies de nuevo.')
-  // Cerramos la sesión para forzar un nuevo login con las credenciales actualizadas
   logout()
 }
 
@@ -60,7 +59,6 @@ onBeforeUnmount(() => {
       <router-link to="/" class="nav-btn">Pagina Principal</router-link>
       <router-link to="/transacciones" class="nav-btn">Transacciones</router-link>
 
-      <!-- Menú de Perfil de Usuario -->
       <div class="profile-menu" ref="dropdownMenuRef">
         <a
           @click.prevent="toggleDropdown"
@@ -71,11 +69,6 @@ onBeforeUnmount(() => {
           <span>{{ userName ?? 'Usuario' }}</span>
         </a>
 
-        <!--
-          El menú desplegable se renderiza condicionalmente.
-          El evento click.self en el modal-overlay (si lo hubiera) o el handleClickOutside
-          se encargará de cerrarlo.
-        -->
         <div v-if="isDropdownOpen" class="dropdown-menu">
           <a @click="openModifyModal" href="#" class="dropdown-item">Modificar Usuario</a>
           <a @click="logout" href="#" class="dropdown-item logout">Cerrar Sesión</a>
@@ -84,7 +77,6 @@ onBeforeUnmount(() => {
     </nav>
   </header>
 
-  <!-- El Modal -->
   <teleport to="body">
     <modificar-usuario-modal
       v-if="isModifyModalOpen"
@@ -144,7 +136,6 @@ onBeforeUnmount(() => {
   color: #4fd1c5;
 }
 
-/* --- Nuevos Estilos para el Menú de Perfil --- */
 .right {
   display: flex;
   align-items: center;

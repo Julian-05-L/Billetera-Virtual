@@ -38,15 +38,14 @@ async function modificarTransaccion() {
   error.value = ''
 
   try {
-    // Construimos el payload exactamente como lo espera el backend.
     const payload = {
-      id: props.transaccion.id, // Campo requerido por el backend
+      id: props.transaccion.id,
       cryptoCode: cryptoCode.value,
       action: action.value,
       cryptoAmount: Number(cryptoAmount.value),
       money: Number(money.value),
-      fechaTransaccion: `${fechaTransaccion.value}T12:00:00.000Z`, // Formato ISO seguro
-      clienteId: props.transaccion.clienteId, // Campo requerido por el backend
+      fechaTransaccion: `${fechaTransaccion.value}T12:00:00.000Z`,
+      clienteId: props.transaccion.clienteId,
     }
     await axios.put(`http://localhost:5000/transaccion/${props.transaccion.id}`, payload)
 
@@ -72,7 +71,6 @@ onMounted(() => {
 
       <form v-else @submit.prevent="modificarTransaccion()">
         <div class="form-columns">
-          <!-- Columna Izquierda -->
           <div class="form-column">
             <div class="form-group">
               <label for="cryptoCode">Criptomoneda (código)</label>
@@ -93,7 +91,6 @@ onMounted(() => {
             </div>
           </div>
 
-          <!-- Columna Derecha -->
           <div class="form-column">
             <div class="form-group">
               <label for="money">Monto en ARS</label>
@@ -154,14 +151,14 @@ onMounted(() => {
 
 .form-columns {
   display: flex;
-  gap: 1.5rem; /* Espacio entre columnas */
+  gap: 1.5rem;
 }
 
 .form-column {
-  flex: 1; /* Cada columna ocupa el 50% del espacio */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* Espacio entre los form-groups dentro de una columna */
+  gap: 1.25rem; 
 }
 
 .form-group {

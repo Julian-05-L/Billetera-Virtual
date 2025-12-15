@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, } from 'vue'
+import { onMounted, ref } from 'vue'
 import axios from 'axios'
 import { Chart, ArcElement, Tooltip, Legend, PieController } from 'chart.js'
 
@@ -97,7 +97,14 @@ defineExpose({
       <canvas ref="chartCanvas"></canvas>
 
       <div class="valor-total">
-        <h3 class="text-xl font-semibold">Valor Total en ARS: ${{ valorArsTotal.toFixed(2) }}</h3>
+        <h3 class="text-xl font-semibold">
+          Valor Total en ARS: ${{
+            valorArsTotal.toLocaleString('es-AR', {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })
+          }}
+        </h3>
       </div>
     </div>
   </div>

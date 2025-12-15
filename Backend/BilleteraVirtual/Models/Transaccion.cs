@@ -27,6 +27,6 @@ namespace BilleteraVirtual.Models
         public int ClienteId { get; set; }
 
         [JsonIgnore]
-        public Cliente? Cliente { get; set; } // Relación con Cliente
+        public Cliente? Cliente { get; set; } // relacion con cliente
     }
 }

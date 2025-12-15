@@ -150,7 +150,7 @@ namespace BilleteraVirtual.Controllers
                 cliente.SaldoPesos -= transaccionExistente.Money;
             }
 
-            // Obtener el precio actual 
+            // obtener el precio actual 
             decimal precioARS;
             try
             {
@@ -169,7 +169,7 @@ namespace BilleteraVirtual.Controllers
 
             decimal nuevoMontoPesos = updateTransaccionDTO.CryptoAmount * precioARS;
 
-            // Validacion de acciones
+            // validacion de acciones
             if (updateTransaccionDTO.Action.ToLower() == "purchase")
             {
                 if (nuevoMontoPesos > cliente.SaldoPesos) 
@@ -204,10 +204,10 @@ namespace BilleteraVirtual.Controllers
                 cliente.SaldoPesos += nuevoMontoPesos;
             }
 
-            // Actualizar cliente
+            // actualizar cliente
             _context.Clientes.Update(cliente);
 
-            // Actualizar transaccion
+            // actualizar transaccion
             transaccionExistente.CryptoCode = updateTransaccionDTO.CryptoCode;
             transaccionExistente.Action = updateTransaccionDTO.Action;
             transaccionExistente.CryptoAmount = updateTransaccionDTO.CryptoAmount;

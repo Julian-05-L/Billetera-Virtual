@@ -57,7 +57,12 @@ async function agregarSaldo() {
       saldoPesos: montoAAgregar.value,
     })
 
-    agregarSaldoSuccess.value = `¡Se agregaron $${montoAAgregar.value.toFixed(2)} a tu saldo!`
+    agregarSaldoSuccess.value = `¡Se agregaron $${(montoAAgregar.value ?? 0).toLocaleString(
+      'es-AR',
+      {
+        minimumFractionDigits: 2,
+      },
+    )} a tu saldo!`
     montoAAgregar.value = null
     await getSaldoCliente()
   } catch (err: any) {
@@ -119,7 +124,15 @@ async function createTransaction() {
       <div class="card-saldo">
         <span class="saldo-label">Saldo Disponible</span>
         <span v-if="loadingSaldo" class="saldo-valor">Cargando...</span>
-        <span v-else class="saldo-valor"> ${{ saldoCliente?.toFixed(2) ?? '0.00' }} ARS </span>
+        <span v-else class="saldo-valor">
+          ${{
+            (saldoCliente ?? 0).toLocaleString('es-AR', {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })
+          }}
+          ARS
+        </span>
       </div>
 
       <div class="card-agregar-saldo">
@@ -148,7 +161,7 @@ async function createTransaction() {
 
         <form @submit.prevent="createTransaction()">
           <div class="form-group">
-            <label for="cryptoCode">Criptomoneda (ej: BTC, ETH, USDT, )</label>
+            <label for="cryptoCode">Criptomoneda (ej: BTC, ETH o USDT)</label>
             <input type="text" id="cryptoCode" v-model="newTransaction.cryptoCode" required />
           </div>
 

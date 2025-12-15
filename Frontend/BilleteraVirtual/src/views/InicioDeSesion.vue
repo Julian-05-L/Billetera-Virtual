@@ -109,10 +109,8 @@ async function register() {
             </ul>
           </div>
           <div class="auth-card-body">
-            <!-- Pestaña de Iniciar Sesión -->
             <div v-if="activeTab === 'login'">
               <h5 class="auth-card-title">Bienvenido de vuelta</h5>
-              <!-- El formulario ahora llama a la función login -->
               <form @submit.prevent="login()">
                 <div class="form-group">
                   <label for="login-email" class="form-label">Email</label>
@@ -147,7 +145,6 @@ async function register() {
                 </div>
               </form>
             </div>
-            <!-- Pestaña de Registrarse -->
             <div v-if="activeTab === 'register'">
               <h5 class="auth-card-title">Crea tu cuenta</h5>
               <form @submit.prevent="register()">
@@ -215,11 +212,11 @@ body {
 
 .login-layout {
   display: flex;
-  flex-grow: 1; /* Ocupa el espacio restante */
+  flex-grow: 1;
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding-top: 1rem; /* Añade padding vertical para que no se pegue al título */
+  padding-top: 1rem;
 }
 
 .welcome-column {
@@ -227,7 +224,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0; /* Evita que el título se encoja */
+  flex-shrink: 0;
 }
 
 .welcome-content {
@@ -247,7 +244,6 @@ body {
 }
 
 .form-panel {
-  /* En pantallas pequeñas, el panel del formulario necesita un fondo para que el texto sea legible sobre la animación */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -264,12 +260,12 @@ body {
 .auth-card {
   width: 100%;
   max-width: 500px;
-  background: rgba(24, 58, 55, 0.6); /* #183a37 con transparencia */
+  background: rgba(24, 58, 55, 0.6);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   color: white;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra más pronunciada */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .auth-tabs-header {
@@ -299,7 +295,7 @@ body {
 .auth-tab-link.active {
   color: white;
   background-color: transparent;
-  border-bottom: 1.5px solid #4fd1c5; /* Un color acento brillante */
+  border-bottom: 1.5px solid #4fd1c5;
 }
 
 .auth-card-body {
@@ -370,7 +366,6 @@ body {
   box-shadow: 0 4px 15px rgba(79, 209, 197, 0.2);
 }
 
-/* Estilo para el mensaje de error */
 .alert-error {
   text-align: center;
   background-color: rgba(220, 53, 69, 0.2);
@@ -379,7 +374,7 @@ body {
   padding: 0.75rem 1.25rem;
   margin-bottom: 1rem;
   border-radius: 0.25rem;
-  width: 98%; /* Hacemos que ocupe el mismo ancho que los inputs */
+  width: 98%; 
 }
 #canvasCripto {
   position: fixed;

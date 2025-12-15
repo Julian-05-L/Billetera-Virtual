@@ -32,7 +32,7 @@ namespace BilleteraVirtual.Controllers
         [HttpGet("{clienteId}")]
         public async Task<ActionResult> ObtenerPortafolio(int clienteId)
         {
-            //Se obtienen todas las transaccciones del cliente
+            // se obtienen todas las transaccciones del cliente
             var transacciones = await _context.Transacciones
                 .Where(t => t.ClienteId == clienteId)
                 .ToListAsync();
@@ -46,7 +46,7 @@ namespace BilleteraVirtual.Controllers
                 });
             }
 
-            //Se calculan los balances por criptomoneda
+            // se calculan los balances por criptomoneda
             var balances = transacciones 
                 .GroupBy(t => t.CryptoCode)
                 .Select(g => new { 
@@ -60,7 +60,7 @@ namespace BilleteraVirtual.Controllers
             decimal valorTotalARS = 0;
             var distribucion = new List<object>();
 
-            //Precio actual de cada criptomoneda y calculo del valor total
+            // precio actual de cada criptomoneda y calculo del valor total
             foreach (var balance in balances)
             {
                 decimal precioARS;

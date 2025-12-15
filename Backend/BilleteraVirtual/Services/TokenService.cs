@@ -19,10 +19,10 @@ namespace BilleteraVirtual.Services
         public string GenerateToken(Cliente cliente)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            // Obtener clave secreta del appsettings.json
+            // obtener clave secreta del appsettings.json
             var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"] ?? throw new ArgumentNullException("Jwt:Key not found"));
 
-            // Claims: información que se guarda en el token
+            // claims: información que se guarda en el token
             var claims = new ClaimsIdentity(new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, cliente.Id.ToString()),
@@ -33,7 +33,7 @@ namespace BilleteraVirtual.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = claims,
-                Expires = DateTime.UtcNow.AddHours(2), //El token expira en 2 horas
+                Expires = DateTime.UtcNow.AddHours(2), // el token expira en 2 horas
                 Issuer = _configuration["Jwt:Issuer"],
                 Audience = _configuration["Jwt:Audience"],
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256)

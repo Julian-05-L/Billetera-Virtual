@@ -132,7 +132,14 @@ onMounted(() => {
                   {{ t.action }}
                 </td>
                 <td>{{ t.cryptoAmount }}</td>
-                <td>${{ Number(t.money).toFixed(2) }}</td>
+                <td>
+                  ${{
+                    Number(t.money).toLocaleString('es-AR', {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    })
+                  }}
+                </td>
                 <td>{{ new Date(t.fechaTransaccion).toLocaleDateString() }}</td>
                 <td class="acciones-cell">
                   <button @click="openModifyModal(t)" class="btn-accion btn-editar">Editar</button>
@@ -151,7 +158,6 @@ onMounted(() => {
       <grafico-portafolio ref="graficoPortafolioRef"></grafico-portafolio>
     </div>
 
-    <!-- Modal para Modificar Transacción -->
     <teleport to="body">
       <modificar-transaccion-modal
         v-if="isModifyModalOpen && selectedTransaction"
@@ -166,29 +172,29 @@ onMounted(() => {
 <style scoped>
 .transacciones-container {
   display: flex;
-  justify-content: center; /* Centra el bloque de columnas en la página */
-  align-items: stretch; /* Hace que las columnas tengan la misma altura */
+  justify-content: center;
+  align-items: stretch;
   padding: 2rem;
-  margin-top: 60px; /* Ajustar según la altura de tu navBar */
-  gap: 4rem; /* Aumentamos la separación entre columnas */
+  margin-top: 60px;
+  gap: 4rem;
   color: white;
   width: 100%;
 }
 
 .info-columna {
-  flex-basis: 65%; /* Le asignamos un 65% del ancho disponible */
-  max-width: 1400px; /* Aumentamos el ancho máximo */
+  flex-basis: 65%;
+  max-width: 1400px;
   text-align: left;
-  display: flex; /* Habilitamos flexbox para esta columna */
-  flex-direction: column; /* Apilamos los elementos verticalmente */
+  display: flex;
+  flex-direction: column;
 }
 
 .grafico-columna {
-  flex: 1; /* Esta columna ocupará el espacio restante */
-  min-width: 400px; /* Aumentamos el mínimo para que no se comprima demasiado */
+  flex: 1;
+  min-width: 400px;
   max-width: 450px;
-  display: flex; /* Habilitamos flexbox para esta columna */
-  flex-direction: column; /* Apilamos los elementos verticalmente */
+  display: flex;
+  flex-direction: column;
 }
 .card-saldo {
   background: rgba(79, 209, 197, 0.2);
@@ -219,18 +225,17 @@ onMounted(() => {
   padding: 1.5rem;
   margin-top: 1.5rem;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  flex-grow: 1; /* Hacemos que la tarjeta crezca para llenar el espacio */
-  display: flex; /* Flexbox para controlar el contenido interno */
-  flex-direction: column; /* Apilar título y tabla */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .contenedor-tabla {
-  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
-  max-height: 350px; /* Altura máxima antes de que aparezca el scroll */
-  flex-grow: 1; /* Permite que este contenedor crezca */
+  overflow-y: auto;
+  max-height: 350px;
+  flex-grow: 1;
 }
 
-/* Estilo para la barra de scroll */
 .contenedor-tabla::-webkit-scrollbar {
   width: 8px;
 }
@@ -253,7 +258,7 @@ onMounted(() => {
 }
 
 .tabla-transacciones th {
-  color: #4fd1c5; /* Color acento para los encabezados */
+  color: #4fd1c5;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -261,15 +266,15 @@ onMounted(() => {
   top: 0;
   background: rgb(24, 58, 55);
   z-index: 10;
-  white-space: nowrap; /* Evita que el texto del encabezado se divida en varias líneas */
+  white-space: nowrap;
 }
 
 .fila-transaccion.fila-purchase {
-  background-color: rgba(255, 99, 132, 0.15); /* Tono rojo más fuerte */
+  background-color: rgba(255, 99, 132, 0.15);
 }
 
 .fila-transaccion.fila-sale {
-  background-color: rgba(79, 209, 197, 0.15); /* Tono verde/azulado más fuerte */
+  background-color: rgba(79, 209, 197, 0.15);
 }
 
 .acciones-cell {
@@ -299,13 +304,13 @@ onMounted(() => {
 }
 
 .accion-compra {
-  color: #ff6384; /* Rojo */
+  color: #ff6384; 
   font-weight: 600;
   text-transform: capitalize;
 }
 
 .accion-venta {
-  color: #4fd1c5; /* Verde/Azulado */
+  color: #4fd1c5;
   font-weight: 600;
   text-transform: capitalize;
 }
