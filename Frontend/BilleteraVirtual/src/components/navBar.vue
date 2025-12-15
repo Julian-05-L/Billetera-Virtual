@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useAuth } from '../composables/useAuth'
-import { ref, onMounted } from 'vue'
+import { useAuth } from '@/composables/useAuth'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import ModificarUsuarioModal from './ModificarUsuarioModal.vue'
 
 const { logout } = useAuth()
@@ -8,8 +8,24 @@ const userName = ref<string | null>(null)
 const isDropdownOpen = ref(false)
 const isModifyModalOpen = ref(false)
 
+const profileButtonRef = ref<HTMLElement | null>(null)
+const dropdownMenuRef = ref<HTMLElement | null>(null)
+
+const handleClickOutside = (event: MouseEvent) => {
+  if (
+    isDropdownOpen.value &&
+    profileButtonRef.value &&
+    dropdownMenuRef.value &&
+    !profileButtonRef.value.contains(event.target as Node) &&
+    !dropdownMenuRef.value.contains(event.target as Node)
+  ) {
+    isDropdownOpen.value = false
+  }
+}
+
 onMounted(() => {
   userName.value = localStorage.getItem('userName')
+  document.addEventListener('click', handleClickOutside)
 })
 
 const toggleDropdown = () => {
@@ -26,6 +42,10 @@ const onUserUpdated = () => {
   // Cerramos la sesión para forzar un nuevo login con las credenciales actualizadas
   logout()
 }
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <template>
@@ -41,11 +61,21 @@ const onUserUpdated = () => {
       <router-link to="/transacciones" class="nav-btn">Transacciones</router-link>
 
       <!-- Menú de Perfil de Usuario -->
-      <div class="profile-menu">
-        <button @click="toggleDropdown" class="profile-button">
+      <div class="profile-menu" ref="dropdownMenuRef">
+        <a
+          @click.prevent="toggleDropdown"
+          href="#"
+          class="nav-btn profile-button"
+          ref="profileButtonRef"
+        >
           <span>{{ userName ?? 'Usuario' }}</span>
-        </button>
+        </a>
 
+        <!--
+          El menú desplegable se renderiza condicionalmente.
+          El evento click.self en el modal-overlay (si lo hubiera) o el handleClickOutside
+          se encargará de cerrarlo.
+        -->
         <div v-if="isDropdownOpen" class="dropdown-menu">
           <a @click="openModifyModal" href="#" class="dropdown-item">Modificar Usuario</a>
           <a @click="logout" href="#" class="dropdown-item logout">Cerrar Sesión</a>
@@ -114,54 +144,20 @@ const onUserUpdated = () => {
   color: #4fd1c5;
 }
 
-.logout-btn {
-  background: transparent;
-  border: 1px solid #ff4b4b;
-  color: #ff4b4b;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-.logout-btn:hover {
-  background: #ff4b4b;
-  color: #1e1e1e;
-  box-shadow: 0 0 10px rgba(255, 75, 75, 0.5);
-}
-
 /* --- Nuevos Estilos para el Menú de Perfil --- */
 .right {
   display: flex;
   align-items: center;
 }
-
 .profile-menu {
   position: relative;
   margin-left: 20px;
 }
-
 .profile-button {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: transparent;
-  border: 1px solid rgba(79, 209, 197, 0.5);
-  color: #efefef;
-  padding: 8px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
 }
-
-.profile-button:hover {
-  background-color: rgba(79, 209, 197, 0.15);
-}
-
 .dropdown-menu {
   position: absolute;
   top: 120%;

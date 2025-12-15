@@ -5,6 +5,10 @@ import { AnimacionCriptos } from '../composables/useBackgroundAnimation'
 import axios from 'axios'
 
 onMounted(() => {
+  // Limpiamos cualquier sesión previa al montar la vista de login
+  localStorage.removeItem('userToken')
+  localStorage.removeItem('userId')
+  localStorage.removeItem('userName')
   AnimacionCriptos()
 })
 

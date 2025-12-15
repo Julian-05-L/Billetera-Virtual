@@ -9,16 +9,20 @@ onMounted(() => {
   getSaldoCliente()
 })
 
-// --- Estado del Saldo Disponible ---
 const saldoCliente = ref(0)
 const loadingSaldo = ref(true)
 
-// --- Estado del Formulario de Nueva Transacción ---
+const montoAAgregar = ref<number | null>(null)
+const agregarSaldoLoading = ref(false)
+const agregarSaldoError = ref('')
+const agregarSaldoSuccess = ref('')
+
 const newTransaction = ref({
   cryptoCode: '',
   action: 'purchase',
   cryptoAmount: null,
 })
+
 const formLoading = ref(false)
 const formError = ref('')
 const formSuccess = ref('')
@@ -38,6 +42,31 @@ async function getSaldoCliente() {
   }
 }
 
+async function agregarSaldo() {
+  if (!montoAAgregar.value || montoAAgregar.value <= 0) {
+    agregarSaldoError.value = 'Por favor, ingresa un monto válido.'
+    return
+  }
+
+  agregarSaldoLoading.value = true
+  agregarSaldoError.value = ''
+  agregarSaldoSuccess.value = ''
+
+  try {
+    await axios.patch(`http://localhost:5000/cliente/${userId}/saldo`, {
+      saldoPesos: montoAAgregar.value,
+    })
+
+    agregarSaldoSuccess.value = `¡Se agregaron $${montoAAgregar.value.toFixed(2)} a tu saldo!`
+    montoAAgregar.value = null
+    await getSaldoCliente()
+  } catch (err: any) {
+    agregarSaldoError.value = err.response?.data?.message || 'Error al agregar saldo.'
+  } finally {
+    agregarSaldoLoading.value = false
+  }
+}
+
 async function createTransaction() {
   formLoading.value = true
   formError.value = ''
@@ -51,22 +80,22 @@ async function createTransaction() {
 
   try {
     const payload = {
-      ...newTransaction.value,
-      userId: userId,
-      fechaTransaccion: new Date().toISOString(),
+      cryptoCode: newTransaction.value.cryptoCode,
+      action: newTransaction.value.action,
+      cryptoAmount: newTransaction.value.cryptoAmount,
+      clienteId: userId,
     }
+
     await axios.post('http://localhost:5000/transaccion', payload)
 
     formSuccess.value = '¡Transacción creada con éxito!'
 
-    // Limpiar formulario
     newTransaction.value = {
       cryptoCode: '',
       action: 'purchase',
       cryptoAmount: null,
     }
 
-    // Actualizar el saldo disponible
     await getSaldoCliente()
   } catch (err: any) {
     formError.value = err.response?.data?.message || 'Error al crear la transacción.'
@@ -81,7 +110,6 @@ async function createTransaction() {
   <nav-bar />
 
   <div class="main-page-container">
-    <!-- Columna Izquierda: Saldo y Bienvenida -->
     <div class="columna-info">
       <h1 class="text-4xl font-bold mb-4">Bienvenido a tu Billetera</h1>
       <p class="text-lg mb-8">
@@ -93,16 +121,34 @@ async function createTransaction() {
         <span v-if="loadingSaldo" class="saldo-valor">Cargando...</span>
         <span v-else class="saldo-valor"> ${{ saldoCliente?.toFixed(2) ?? '0.00' }} ARS </span>
       </div>
+
+      <div class="card-agregar-saldo">
+        <h3 class="form-title-sm">Agregar Saldo a tu Cuenta</h3>
+        <form @submit.prevent="agregarSaldo()">
+          <div class="form-group">
+            <label for="montoAAgregar">Monto en ARS</label>
+            <input type="number" step="any" id="montoAAgregar" v-model="montoAAgregar" required />
+          </div>
+
+          <div v-if="agregarSaldoError" class="alert-error">{{ agregarSaldoError }}</div>
+          <div v-if="agregarSaldoSuccess" class="alert-success">{{ agregarSaldoSuccess }}</div>
+
+          <div class="modal-actions">
+            <button type="submit" class="btn-guardar" :disabled="agregarSaldoLoading">
+              {{ agregarSaldoLoading ? 'Agregando...' : 'Agregar Saldo' }}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <!-- Columna Derecha: Formulario de Nueva Transacción -->
     <div class="columna-form">
       <div class="card-form">
         <h3 class="form-title">Registrar Nueva Transacción</h3>
 
-        <form @submit.prevent="createTransaction">
+        <form @submit.prevent="createTransaction()">
           <div class="form-group">
-            <label for="cryptoCode">Criptomoneda (ej: BTC, ETH)</label>
+            <label for="cryptoCode">Criptomoneda (ej: BTC, ETH, USDT, )</label>
             <input type="text" id="cryptoCode" v-model="newTransaction.cryptoCode" required />
           </div>
 
@@ -183,6 +229,16 @@ async function createTransaction() {
   font-weight: 700;
 }
 
+.card-agregar-saldo {
+  background: rgba(24, 58, 55, 0.6);
+  backdrop-filter: blur(5px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+}
+
 .card-form {
   background: rgba(24, 58, 55, 0.6);
   backdrop-filter: blur(10px);
@@ -194,6 +250,14 @@ async function createTransaction() {
 
 .form-title {
   font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #efefef;
+}
+
+.form-title-sm {
+  font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -217,6 +281,10 @@ async function createTransaction() {
   color: white;
   border-radius: 6px;
   font-size: 1rem;
+}
+
+.form-group select option {
+  background: #183a37;
 }
 
 .modal-actions {

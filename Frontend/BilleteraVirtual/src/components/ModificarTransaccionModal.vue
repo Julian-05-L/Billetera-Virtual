@@ -9,7 +9,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['close', 'transactionUpdated'])
+const emit = defineEmits(['close', 'transaction-updated'])
 
 const cryptoCode = ref('')
 const action = ref('purchase')
@@ -29,7 +29,7 @@ function populateForm() {
   fechaTransaccion.value = new Date(data.fechaTransaccion).toISOString().split('T')[0]
 }
 
-async function updateTransaction() {
+async function modificarTransaccion() {
   if (!confirm('¿Estás seguro de que quieres guardar los cambios en esta transacción?')) {
     return
   }
@@ -38,17 +38,19 @@ async function updateTransaction() {
   error.value = ''
 
   try {
+    // Construimos el payload exactamente como lo espera el backend.
     const payload = {
+      id: props.transaccion.id, // Campo requerido por el backend
       cryptoCode: cryptoCode.value,
       action: action.value,
       cryptoAmount: Number(cryptoAmount.value),
       money: Number(money.value),
-      fechaTransaccion: fechaTransaccion.value,
+      fechaTransaccion: `${fechaTransaccion.value}T12:00:00.000Z`, // Formato ISO seguro
+      clienteId: props.transaccion.clienteId, // Campo requerido por el backend
     }
-    await axios.put(`http://localhost:5000/transaccion/${props.transaccionId}`, payload)
+    await axios.put(`http://localhost:5000/transaccion/${props.transaccion.id}`, payload)
 
-    emit('transactionUpdated')
-    emit('close')
+    emit('transaction-updated')
   } catch (err: any) {
     error.value = err.response?.data?.message || 'Error al actualizar la transacción.'
   } finally {
@@ -68,7 +70,7 @@ onMounted(() => {
 
       <div v-if="loading" class="text-center">Cargando datos...</div>
 
-      <form v-else @submit.prevent="updateTransaction">
+      <form v-else @submit.prevent="modificarTransaccion()">
         <div class="form-columns">
           <!-- Columna Izquierda -->
           <div class="form-column">
@@ -119,7 +121,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Estilos copiados y adaptados de ModificarUsuarioModal.vue */
 .modal-overlay {
   position: fixed;
   top: 0;

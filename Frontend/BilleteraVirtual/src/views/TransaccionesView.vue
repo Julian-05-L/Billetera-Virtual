@@ -37,15 +37,12 @@ async function GetTransacciones() {
   }
 }
 
-GetTransacciones()
-
 async function getPortafolio() {
   loadingPortafolio.value = true
   try {
     const response = await axios.get(`http://localhost:5000/portafolio/${userId}`)
     portafolio.value = response.data
   } catch (err) {
-    // El error se manejará en el gráfico, aquí solo nos aseguramos de que no bloquee.
     console.error('Error al cargar el portafolio:', err)
     portafolio.value = { distribucion: [], valorTotalARS: 0 }
   } finally {
@@ -54,16 +51,15 @@ async function getPortafolio() {
 }
 
 async function deleteTransaccion(id: number) {
-  // Pedimos confirmación al usuario para evitar borrados accidentales
   if (!confirm('¿Estás seguro de que quieres eliminar esta transacción?')) {
     return
   }
 
   try {
     await axios.delete(`http://localhost:5000/transaccion/${id}`)
-    // Filtramos el array para quitar la transacción eliminada y actualizar la UI
+
     transacciones.value = transacciones.value.filter((t) => t.id !== id)
-    // Recargamos los datos del portafolio para actualizar el saldo y el gráfico
+
     if (graficoPortafolioRef.value) {
       graficoPortafolioRef.value.cargarPortafolio()
     }
@@ -93,7 +89,7 @@ onMounted(() => {
 
 <template>
   <canvas id="canvasCripto"></canvas>
-  <nav-bar />
+  <nav-bar></nav-bar>
 
   <div class="transacciones-container">
     <div class="info-columna">
@@ -132,7 +128,7 @@ onMounted(() => {
                 :class="t.action === 'purchase' ? 'fila-purchase' : 'fila-sale'"
               >
                 <td>{{ t.cryptoCode.toUpperCase() }}</td>
-                <td :class="t.action === 'purchase' ? 'text-red-400' : 'text-green-400'">
+                <td :class="t.action === 'purchase' ? 'accion-compra' : 'accion-venta'">
                   {{ t.action }}
                 </td>
                 <td>{{ t.cryptoAmount }}</td>
@@ -152,14 +148,14 @@ onMounted(() => {
     </div>
 
     <div class="grafico-columna">
-      <grafico-portafolio ref="graficoPortafolioRef" />
+      <grafico-portafolio ref="graficoPortafolioRef"></grafico-portafolio>
     </div>
 
     <!-- Modal para Modificar Transacción -->
     <teleport to="body">
       <modificar-transaccion-modal
         v-if="isModifyModalOpen && selectedTransaction"
-        :transaction="selectedTransaction"
+        :transaccion="selectedTransaction"
         @close="isModifyModalOpen = false"
         @transaction-updated="onTransactionUpdated"
       />
@@ -268,16 +264,12 @@ onMounted(() => {
   white-space: nowrap; /* Evita que el texto del encabezado se divida en varias líneas */
 }
 
-.fila-transaccion:hover {
-  background-color: rgba(79, 209, 197, 0.1);
+.fila-transaccion.fila-purchase {
+  background-color: rgba(255, 99, 132, 0.15); /* Tono rojo más fuerte */
 }
 
-.fila-transaccion.fila-purchase:hover {
-  background-color: rgba(79, 209, 197, 0.1); /* Tono verde */
-}
-
-.fila-transaccion.fila-sale:hover {
-  background-color: rgba(255, 99, 132, 0.1); /* Tono rojo */
+.fila-transaccion.fila-sale {
+  background-color: rgba(79, 209, 197, 0.15); /* Tono verde/azulado más fuerte */
 }
 
 .acciones-cell {
@@ -306,6 +298,17 @@ onMounted(() => {
   color: white;
 }
 
+.accion-compra {
+  color: #ff6384; /* Rojo */
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.accion-venta {
+  color: #4fd1c5; /* Verde/Azulado */
+  font-weight: 600;
+  text-transform: capitalize;
+}
 .mensaje-sin-datos {
   text-align: center;
   padding: 2rem;
