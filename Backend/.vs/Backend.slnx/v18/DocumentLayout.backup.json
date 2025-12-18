@@ -3,60 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Controllers\\PortafolioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\TransaccionController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Controllers\\TransaccionController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Models\\Transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\CrearClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Models\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Services\\TokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Controllers\\ClienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\ITokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Services\\ITokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Services\\TokenService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Models\\Transaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Models\\Cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Models\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Controllers\\PortafolioController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\Controllers\\ClienteController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\CrearClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\LoginDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,80 +66,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransaccionController.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\TransaccionController.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\TransaccionController.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\TransaccionController.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Controllers\\TransaccionController.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAwwH0AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T00:04:58.175Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Services\\TokenService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAxAAAAAAAAAA==",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T03:54:28.825Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CrearClienteDTO.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
-              "RelativeToolTip": "BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T04:54:56.181Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CrearTransaccionDTO.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
-              "RelativeToolTip": "BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:29:42.297Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Transaccion.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Models\\Transaccion.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Models\\Transaccion.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T05:36:38.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PortafolioController.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\PortafolioController.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Controllers\\PortafolioController.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAUwFIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:15:15.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-05T02:42:54.382Z"
             },
             {
               "$type": "Document",
@@ -155,7 +94,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
+              "Title": "Transaccion.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Models\\Transaccion.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\Transaccion.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Models\\Transaccion.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T05:36:38.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ITokenService.cs",
               "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\ITokenService.cs",
               "RelativeDocumentMoniker": "BilleteraVirtual\\Services\\ITokenService.cs",
@@ -163,31 +114,95 @@
               "RelativeToolTip": "BilleteraVirtual\\Services\\ITokenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T03:54:33.795Z"
+              "WhenOpened": "2025-12-05T03:54:33.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Services\\TokenService.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Services\\TokenService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T03:54:28.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteController.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\ClienteController.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Controllers\\ClienteController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAE4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T00:04:56.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransaccionController.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\TransaccionController.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\TransaccionController.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\TransaccionController.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Controllers\\TransaccionController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T00:04:58.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PortafolioController.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\PortafolioController.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\PortafolioController.cs",
+              "RelativeToolTip": "BilleteraVirtual\\Controllers\\PortafolioController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAAACIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T02:15:15.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ActualizarSaldoPesosDTO.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
+              "RelativeToolTip": "BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T04:55:01.317Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Models\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Models\\AppDbContext.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Models\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
+              "Title": "CrearClienteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
+              "RelativeToolTip": "BilleteraVirtual\\DTOs\\CrearClienteDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T02:42:54.382Z"
+              "WhenOpened": "2025-12-09T04:54:56.181Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "UpdateClienteDTO.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
-              "RelativeToolTip": "BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
+              "Title": "CrearTransaccionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
+              "RelativeToolTip": "BilleteraVirtual\\DTOs\\CrearTransaccionDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T05:40:11.323Z"
+              "WhenOpened": "2025-12-05T02:29:42.297Z"
             },
             {
               "$type": "Document",
@@ -203,39 +218,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
+              "Title": "UpdateClienteDTO.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
+              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
+              "RelativeToolTip": "BilleteraVirtual\\DTOs\\UpdateClienteDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T05:40:11.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "UpdateTransaccionDTO.cs",
               "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs",
               "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs",
               "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs",
               "RelativeToolTip": "BilleteraVirtual\\DTOs\\UpdateTransaccionDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T14:24:24.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ActualizarSaldoPesosDTO.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
-              "RelativeToolTip": "BilleteraVirtual\\DTOs\\ActualizarSaldoPesosDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T04:55:01.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ClienteController.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs",
-              "RelativeDocumentMoniker": "BilleteraVirtual\\Controllers\\ClienteController.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Desktop\\Proyecto Final\\Backend\\BilleteraVirtual\\Controllers\\ClienteController.cs",
-              "RelativeToolTip": "BilleteraVirtual\\Controllers\\ClienteController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-04T00:04:56.051Z"
             }
           ]
         }

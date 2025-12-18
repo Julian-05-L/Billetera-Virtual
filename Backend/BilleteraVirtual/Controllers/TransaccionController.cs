@@ -6,9 +6,11 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Runtime.InteropServices.Marshalling;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BilleteraVirtual.Controllers
 {
+    [Authorize]
     [Route("transaccion")]
     [ApiController]
     public class TransaccionController : ControllerBase

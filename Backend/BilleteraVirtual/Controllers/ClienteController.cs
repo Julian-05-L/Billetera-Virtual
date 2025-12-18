@@ -11,10 +11,12 @@ using System.Diagnostics;
 using System.Data;
 using BCrypt.Net;
 using Microsoft.Extensions.Configuration.UserSecrets;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace BilleteraVirtual.Controllers
 {
+    [Authorize]
     [Route("cliente")]
     [ApiController]
     public class ClienteController : ControllerBase
@@ -47,6 +49,7 @@ namespace BilleteraVirtual.Controllers
             return cliente;
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<Cliente>> CreateCliente(BilleteraVirtual.DTOs.CrearClienteDTO clienteCreateDTO)
         {
@@ -68,6 +71,7 @@ namespace BilleteraVirtual.Controllers
             return CreatedAtAction(nameof(GetClientes), new { id = cliente.Id }, cliente);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login(BilleteraVirtual.DTOs.LoginDTO loginDTO)
         {

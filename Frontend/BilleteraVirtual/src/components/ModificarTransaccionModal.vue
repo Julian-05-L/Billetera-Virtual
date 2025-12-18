@@ -94,7 +94,7 @@ onMounted(() => {
           <div class="form-column">
             <div class="form-group">
               <label for="money">Monto en ARS</label>
-              <input type="number" step="any" id="money" v-model="money" required />
+              <input type="number" step="any" id="money" v-model="money" required disabled />
             </div>
 
             <div class="form-group">
@@ -158,7 +158,7 @@ onMounted(() => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; 
+  gap: 1.25rem;
 }
 
 .form-group {
@@ -180,6 +180,10 @@ onMounted(() => {
   color: white;
   border-radius: 6px;
   font-size: 1rem;
+}
+
+.form-group select option {
+  background: #183a37;
 }
 
 .modal-actions {
